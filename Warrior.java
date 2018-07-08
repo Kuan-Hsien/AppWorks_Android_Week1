@@ -1,6 +1,7 @@
 package com.example.studyhard.appworks_android_w1;
 
-public class Human{
+
+public class Warrior extends Human {
     /**
      * *************** Tips ****************
      * Jobs: Hunter, Warrior, Mage
@@ -19,37 +20,27 @@ public class Human{
      * | Ice Staff     | Frostbolt       |
      * -----------------------------------
      */
-    private String name;
-    private int weapon;
 
-    public final static int FIRE_BOW = 1;
-    public final static int ICE_BOW = 2;
-
-    public Human(){
-
-    }
-
-    public void setName(String name)
+    public Warrior(String inputName,int inputWeapon)
     {
-        this.name = name;
+        setName(inputName);
+        setWeapon(inputWeapon);
     }
 
-    public String getName()
+
+    public void attack()
     {
-        return name;
-    }
-
-    public void setWeapon(int weapon)
-    {
-        this.weapon=weapon;
-    }
-
-    public int getWeapon()
-    {
-        return weapon;
-    }
-
-    public void attack(){
-        System.out.println("Fist Attack!");
+        if(getWeapon()==FIRE_BOW)
+        {
+            System.out.println("Fire Slash!");
+        }
+        else if(getWeapon()==ICE_BOW)
+        {
+            System.out.println("Ice Slash!");
+        }
+        else //Default
+        {
+            System.out.println("Slash!");
+        }
     }
 }
